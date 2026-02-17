@@ -1,37 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Login Profesional</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Conexión con el archivo CSS -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
-<div class="login-container">
-    <h2>Iniciar Sesión</h2>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand__dot"></span><span>Proyecto</span>
+    </a>
+    <nav class="navlinks">
+      <a class="active" href="index.html">Inicio</a>
+      <a href="acerca.html">Acerca</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="login.html">Login</a>
+      <a href="registro.html">Registro</a>
+    </nav>
+  </div>
+</header>
 
-    <form>
-        <div class="input-group">
-            <label>Correo Electrónico</label>
-            <input type="email" placeholder="" required>
-        </div>
+<main class="container">
+  <section class="card hero">
+    <div>
+      <h1 class="h1">Maqueta del proyecto (sin funcionalidad)</h1>
+      <p class="p">
+        Incluye header, footer, login, registro y páginas interiores para navegación.
+      </p>
 
-        <div class="input-group">
-            <label>Contraseña</label>
-            <input type="password" placeholder="" required>
-        </div>
-
-        <button type="submit" class="btn-login">Entrar</button>
-    </form>
-
-    <div class="extra">
-        ¿No tienes cuenta? <a href="#">Regístrate</a>
+      <div class="grid">
+        <article class="card feature">
+          <h3>✅ Estructura completa</h3><p>Todo conectado con links.</p>
+        </article>
+        <article class="card feature">
+          <h3>🎨 Diseño consistente</h3><p>Un CSS para todas las páginas.</p>
+        </article>
+        <article class="card feature">
+          <h3>📱 Responsive</h3><p>Se adapta a móvil y desktop.</p>
+        </article>
+      </div>
     </div>
-</div>
+
+    <aside class="card feature">
+      <h3>Tip</h3>
+      <p>Luego puedes agregar funcionalidad con JS o backend, pero por ahora solo estructura.</p>
+    </aside>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <span>© 2026 Proyecto</span>
+    <span><a href="acerca.html">Acerca</a> · <a href="contacto.html">Contacto</a></span>
+  </div>
+</footer>
 
 </body>
 </html>

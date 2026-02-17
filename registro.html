@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand__dot"></span><span>Proyecto</span>
+    </a>
+    <nav class="navlinks">
+      <a href="index.html">Inicio</a>
+      <a href="acerca.html">Acerca</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="login.html">Login</a>
+      <a class="active" href="registro.html">Registro</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card formCard">
+    <h2 class="formTitle">Crear cuenta</h2>
+    <p class="formSub">Formulario visual (sin guardar datos).</p>
+
+    <form>
+      <div class="row">
+        <div class="field" style="flex:1">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" placeholder="Tu nombre" required>
+        </div>
+        <div class="field" style="flex:1">
+          <label for="apellido">Apellido</label>
+          <input id="apellido" type="text" placeholder="Tu apellido" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="correo">Correo</label>
+        <input id="correo" type="email" placeholder="ejemplo@correo.com" required>
+      </div>
+
+      <div class="row">
+        <div class="field" style="flex:1">
+          <label for="pass1">Contraseña</label>
+          <input id="pass1" type="password" placeholder="••••••••" required>
+        </div>
+        <div class="field" style="flex:1">
+          <label for="pass2">Confirmar</label>
+          <input id="pass2" type="password" placeholder="••••••••" required>
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Registrarme</button>
+      <p class="small">¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <span>© 2026 Proyecto</span>
+    <span><a href="acerca.html">Acerca</a> · <a href="contacto.html">Contacto</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
