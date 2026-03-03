@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pokémon (PokeAPI)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- (Opcional) Header sencillo -->
+  <header style="padding: 16px 0;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 16px; display:flex; gap:12px; align-items:center; justify-content:space-between;">
+      <h1 style="margin:0;">Página interior: Pokémon</h1>
+      <nav style="display:flex; gap:10px;">
+        <a href="index.html">Inicio</a>
+        <a href="pokemon.html" aria-current="page">Pokémon</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 1100px; margin: 0 auto; padding: 0 16px;">
+    <section style="padding: 16px; border: 1px solid rgba(127,127,127,.25); border-radius: 14px;">
+      <p style="margin-top:0;">Escribe un nombre o ID (ej. <b>pikachu</b> o <b>25</b>) y carga su imagen + nombre desde PokeAPI.</p>
+
+      <form id="pokeForm" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
+        <input
+          id="pokeInput"
+          type="text"
+          placeholder="pikachu / 25"
+          autocomplete="off"
+          style="padding:10px 12px; border-radius:10px; border:1px solid rgba(127,127,127,.35); min-width:240px;"
+        />
+        <button type="submit" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(127,127,127,.35); cursor:pointer;">
+          Cargar Pokémon
+        </button>
+        <button id="randomBtn" type="button" style="padding:10px 12px; border-radius:10px; border:1px solid rgba(127,127,127,.35); cursor:pointer;">
+          Aleatorio
+        </button>
+      </form>
+
+      <div id="status" role="status" aria-live="polite" style="margin-top:12px;"></div>
+
+      <div style="margin-top:16px; display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+        <img
+          id="pokeImg"
+          src=""
+          alt=""
+          width="220"
+          height="220"
+          style="display:none; object-fit:contain; background:rgba(127,127,127,.08); border-radius:16px; padding:10px;"
+        />
+        <div>
+          <h2 id="pokeName" style="margin:0 0 6px 0;">—</h2>
+          <p id="pokeId" style="margin:0; opacity:.8;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--Footer -->
+  <footer style="padding: 20px 0; margin-top: 26px; opacity:.85;">
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 16px;">
+      Hecho con PokeAPI.
+    </div>
+  </footer>
+
+  <script src="pokemon.js"></script>
+</body>
+</html>
