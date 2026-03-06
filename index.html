@@ -1,63 +1,107 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Inicio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokédex</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header>
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <span class="brand__dot"></span><span>Proyecto</span>
-    </a>
-    <nav class="navlinks">
-      <a class="active" href="index.html">Inicio</a>
-      <a href="acerca.html">Acerca</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="login.html">Login</a>
-      <a href="registro.html">Registro</a>
-      <a href="pokemon.html">Pokemon</a>
-    </nav>
-  </div>
-</header>
+  <header class="header">
+    <div class="container">
+      <h1>Pokédex</h1>
+      <p>Consulta Pokémon por nombre, ID o tipo</p>
 
-<main class="container">
-  <section class="card hero">
-    <div>
-      <h1 class="h1">Maqueta del proyecto (sin funcionalidad)</h1>
-      <p class="p">
-        Incluye header, footer, login, registro y páginas interiores para navegación.
-      </p>
-
-      <div class="grid">
-        <article class="card feature">
-          <h3> Estructura </h3><p>Todo conectado con links.</p>
-        </article>
-        <article class="card feature">
-          <h3> Diseño </h3><p>CSS para todas las páginas.</p>
-        </article>
-        <article class="card feature">
-          <h3>Responsive</h3><p>Se adapta a móvil y desktop.</p>
-        </article>
-      </div>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
+        <a href="acerca.html">Acerca</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="login.html">Login</a>
+        <a href="registro.html">Registro</a>
+      </nav>
     </div>
+  </header>
 
-    <aside class="card feature">
-      <h3>Tip</h3>
-      <p>estructura</p>
-    </aside>
-  </section>
-</main>
+  <main class="container">
+    <form id="controlsForm" class="filters">
+      <input
+        type="text"
+        id="q"
+        placeholder="Buscar por nombre o ID"
+      />
 
-<footer>
-  <div class="container footer">
-    <span>2026 Proyecto</span>
-    <span><a href="acerca.html">Acerca</a> · <a href="contacto.html">Contacto</a></span>
-  </div>
-</footer>
+      <select id="typeFilter">
+        <option value="">Todos los tipos</option>
+      </select>
 
+      <select id="sortBy">
+        <option value="id-asc">ID ↑</option>
+        <option value="id-desc">ID ↓</option>
+        <option value="name-asc">Nombre A-Z</option>
+        <option value="name-desc">Nombre Z-A</option>
+      </select>
+
+      <button type="submit">Aplicar</button>
+    </form>
+
+    <section
+      id="results"
+      class="grid"
+      aria-live="polite"
+      aria-busy="false"
+    ></section>
+
+    <div class="load-more-wrap">
+      <button id="loadMore" class="load-more" type="button">
+        Cargar más
+      </button>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Proyecto Pokédex consumiendo PokeAPI</p>
+    </div>
+  </footer>
+
+  <!-- Template de tarjeta -->
+  <template id="pokemon-card-template">
+    <article class="card">
+      <img class="card-img" src="" alt="" />
+      <div class="card-body">
+        <div class="card-top">
+          <h2 class="pokemon-name"></h2>
+          <span class="pokemon-id"></span>
+        </div>
+
+        <div class="types"></div>
+
+        <p class="pokemon-height"></p>
+        <p class="pokemon-weight"></p>
+
+        <h3>Habilidades</h3>
+        <ul class="ability-list"></ul>
+
+        <h3>Stats base</h3>
+        <ul class="stats-list"></ul>
+      </div>
+    </article>
+  </template>
+
+  <!-- Template skeleton -->
+  <template id="pokemon-card-skeleton">
+    <article class="card skeleton-card">
+      <div class="skeleton skeleton-img"></div>
+      <div class="card-body">
+        <div class="skeleton skeleton-title"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text"></div>
+        <div class="skeleton skeleton-text"></div>
+      </div>
+    </article>
+  </template>
+
+  <script src="pokemon.js"></script>
 </body>
 </html>
