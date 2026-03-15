@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Batalla Pokémon</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <section id="selection-screen" class="screen active">
+    <h1>Elige a tu Pokémon</h1>
+
+    <div class="inputs">
+      <input id="poke1-input" list="pokemon-list" placeholder="Pokémon 1" />
+      <input id="poke2-input" list="pokemon-list" placeholder="Pokémon 2" />
+      <datalist id="pokemon-list"></datalist>
+    </div>
+
+    <button onclick="iniciarBatalla()">¡Comenzar la pelea!</button>
+  </section>
+
+  <section id="battle-screen" class="screen">
+    <h2>Simulación en curso...</h2>
+
+    <div class="arena">
+      <div class="pokemon-card">
+        <h3 id="p1-name">Pokémon 1</h3>
+        <img id="p1-img" src="" alt="Pokémon 1" />
+        <div class="hp-bar-container">
+          <div id="p1-hp-bar" class="hp-bar"></div>
+        </div>
+        <p>HP: <span id="p1-hp-text">100%</span></p>
+      </div>
+
+      <div id="narrator-box">
+        <p id="narrator-text">¡Preparando el combate!</p>
+      </div>
+
+      <div class="pokemon-card">
+        <h3 id="p2-name">Pokémon 2</h3>
+        <img id="p2-img" src="" alt="Pokémon 2" />
+        <div class="hp-bar-container">
+          <div id="p2-hp-bar" class="hp-bar"></div>
+        </div>
+        <p>HP: <span id="p2-hp-text">100%</span></p>
+      </div>
+    </div>
+
+    <div id="battle-log">
+      <h3>Historial de movimientos</h3>
+      <ul id="log-list"></ul>
+    </div>
+  </section>
+
+  <section id="winner-screen" class="screen">
+    <h1>¡GANADOR!</h1>
+    <h2 id="winner-name">---</h2>
+    <img id="winner-img" src="" alt="Ganador" />
+    <br />
+    <button onclick="location.reload()">Simular otra batalla</button>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
